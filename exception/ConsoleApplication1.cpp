@@ -1,4 +1,4 @@
-﻿#include <iostream>
+#include <iostream>
 #include <exception>
 
 int main() {
@@ -19,7 +19,7 @@ int main() {
 			std::cout << res;
 		}
 	}
-	catch (const std::exception& err) {
+	catch(const std::exception& err){
 		std::cout << "Invalid input";
 	}
 
