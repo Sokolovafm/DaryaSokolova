@@ -1,28 +1,46 @@
+// Исключение C++.cpp : Этот файл содержит функцию "main". Здесь начинается и заканчивается выполнение программы.
+//
+
 #include <iostream>
-#include <exception>
 
-int main() {
-	try {
-		std::cout << "Enter first number ";
-		double num1;
-		std::cin >> num1;
+using namespace std;
 
-		std::cout << "Enter second number ";
-		double num2;
-		std::cin >> num2;
-
-		if (num2 == 0) {
-			std::cout << "You can't divide by zero";
-		}
-		else {
-			double res = num1 / num2;
-			std::cout << res;
-		}
-	}
-	catch(const std::exception& err){
-		std::cout << "Invalid input";
-	}
-
-
-	return 0;
-}
+int main()
+{
+    setlocale(LC_ALL, "Russian");
+    float num1, num2, res;
+    try
+    {
+        cout << "Введите первое число:";
+        cin >> num1;
+        cout << "Введите второе число:";
+        cin >> num2;
+        if (num2 == 0)
+        {
+            throw - 1;
+        }
+        cout << "Результат:" << (res = num1 / num2)
+            << endl;
+    }
+   /* catch (double num2)
+    {
+        if (num2 == 0)
+        {
+            throw "На ноль делить нельзя";
+            cout << "Ошибка" <<
+                endl;
+            cout << "Делить на 0 нельзя" <<
+                endl;
+        }
+    }*/
+    catch (invalid_argument)
+    {
+        cout << "Ошибка операции" <<
+            endl;
+    }
+    catch (...) 
+    {
+        cout << "Ошибка операции1" <<
+            endl;
+    }
+}  
